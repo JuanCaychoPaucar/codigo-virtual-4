@@ -1,2 +1,2 @@
 # Código virtual 4
-## Juan Carlos Caycho paucar
+## Juan Carlos Caycho Paucar
