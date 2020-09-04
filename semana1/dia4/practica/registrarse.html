@@ -26,7 +26,7 @@
                             <label for="inputNombre">Nombre completo : </label>
                         </td>
                         <td>
-                            <input type="text" id="inputNombre">
+                            <input type="text" id="inputNombre" placeholder="Ingrese nombres completos" minlength="4" maxlength="8">
                         </td>
                     </tr>
                     <tr>
@@ -34,7 +34,7 @@
                             <label for="inputApellido">Apellidos : </label>
                         </td>
                         <td>
-                            <input type="text" id="inputApellido">
+                            <input type="text" id="inputApellido" placeholder="Ingrese apellidos completos">
                         </td>
                     </tr>
                     <tr>
@@ -42,7 +42,7 @@
                             <label for="inputEdad">Edad : </label>
                         </td>
                         <td>
-                            <input type="number" id="inputEdad">
+                            <input type="number" id="inputEdad" placeholder="Ingrese edad" min="1">
                         </td>
                     </tr>
                     <tr>
@@ -58,7 +58,7 @@
                             <label for="inputEmail">Correo : </label>
                         </td>
                         <td>
-                            <input type="email" id="inputEmail">
+                            <input type="email" id="inputEmail"  placeholder="Ingrese correo electronico" value="@gmail.com">
                         </td>
                     </tr>
                     <tr>
@@ -66,7 +66,8 @@
                             <label for="inputPassword">Contraseña : </label>
                         </td>
                         <td>
-                            <input type="password" id="inputPassword">
+                            <input type="password" id="inputPassword" placeholder="Ingrese contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters">
                         </td>
                     </tr>
                     <tr>
@@ -74,7 +75,7 @@
                             <label for="">Sexo : </label>
                         </td>
                         <td>
-                            <input type="radio" id="inputRadioM" name="genero">
+                            <input type="radio" id="inputRadioM" name="genero" checked>
                             <label for="inputRadioM">M</label>
 
                             <input type="radio" id="inputRadioF" name="genero">
@@ -117,7 +118,7 @@
                             <label for="textAreaDescripcion">Descripcion : </label>
                         </td>
                         <td>
-                            <textarea name="" id="textAreaDescripcion" cols="30" rows="10"></textarea>
+                            <textarea name="" id="textAreaDescripcion" cols="30" rows="10" placeholder="Ingrese descripcion"></textarea>
                         </td>
                     </tr>
                     <tr>
