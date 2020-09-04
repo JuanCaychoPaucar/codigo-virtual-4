@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+
+<body>
+    <header>
+        <h1></h1>
+    </header>
+
+    <main>
+        <section>
+            <form action="">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="inputNombre">Nombre Completo : </label>
+                        </td>
+                        <td>
+                            <input type="text" id="inputNombre" placeholder="Ingrese nombre completo" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="inputEdad">Edad : </label>
+                        </td>
+                        <td>
+                            <input type="number" id="inputEdad" placeholder="Ingrese su edad">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="inputFecha">Fecha : </label>
+                        </td>
+                        <td>
+                            <input type="date" id="inputFecha">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="inputColor">Color : </label>
+                        </td>
+                        <td>
+                            <input type="color" id="inputColor">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Genero</label>
+                        </td>
+                        <td>
+                            <label for="inputRadioM">Masculino</label>
+                            <input type="radio" id="inputRadioM" name="genero" checked>
+
+                            <label for="inputRadioF">Femenino</label>
+                            <input type="radio" id="inputRadioF" name="genero">
+
+                            <label for="inputRadioO">Otro</label>
+                            <input type="radio" id="inputRadioO" name="genero">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Idiomas :</label>
+                        </td>
+                        <td>
+                            <label for="checkIngles">Ingles</label>
+                            <input type="checkbox" id="checkIngles">
+
+                            <label for="checkEspanol">Español</label>
+                            <input type="checkbox" id="checkEspanol">
+
+                            <label for="checkPortugues">Portugues</label>
+                            <input type="checkbox" id="checkPortugues">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="inputEmail">Email : </label>
+                        </td>
+                        <td>
+                            <input type="email" value="@gmail.com" placeholder="Ingrese su email" id="inputEmail">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="inputContrasena">Contraseña : </label>
+                        </td>
+                        <td>
+                            <input type="password" id="inputContrasena">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="txtAreaComentario">Comentarios</label>
+                        </td>
+                        <td>
+                            <textarea name="" id="txtAreaComentario" cols="30" rows="10"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="slcDepartamento">Seleccione departamento : </label>
+                        </td>
+                        <td>
+                            <select name="" id="slcDepartamento">
+                                <option value="">Seleccione departamento</option>
+                                <option value="">Arequipa</option>
+                                <option value="">Lima</option>
+                                <option value="">Tacna</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Subir archivo : </label>
+                        </td>
+                        <td>
+                            <input type="file">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Acciones : </label>
+                        </td>
+                        <td>
+                            <input type="submit" value="Registrarme">
+                            <input type="reset" value="Limpiar formulario">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
