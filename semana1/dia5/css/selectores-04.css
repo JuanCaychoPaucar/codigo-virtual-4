@@ -1,0 +1,25 @@
+
+/* nth-child (posicion) . Obedece siempre y cuando sean hermanos*/
+li:nth-child(2){
+    color: blue;
+}
+
+
+li:first-child{
+    color: red;
+}
+
+li:last-child{
+    color: green;
+}
+
+/* odd - even | odd=impares | even=pares*/
+tbody tr:nth-child(odd){
+    background: purple;
+}
+
+tbody tr:nth-child(even){
+    background: red;
+}
+
+
