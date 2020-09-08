@@ -1,0 +1,56 @@
+/* Fuentes consumidas a traves de un CDN, Content Delivered Network */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+code{
+    color: violet;
+}
+
+
+.titulo{
+    /* tipo de fuente */
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* tamaño de la fuente */
+    font-size: 32px;
+
+    /* Grosor de la fuente
+    valores entre 100 y 900, donde 900 es super negrita
+    valores "normal" y "bold" */
+    font-weight: 500;
+    font-style: italic;
+}
+
+.subtitulo{
+    /* une todas las propiedades de fuente
+    Orden: style weight size family */
+    font: normal 500 24px Arial;
+}
+
+.parrafos__p1{
+    /* Alineacion del texto interno de un elemento
+    center right justify*/
+    text-align: center;
+}
+
+.parrafos__titulo{
+    text-align: center;
+    color: white;
+    background-color: #444;
+
+    /* espaciado entre letra y letra */
+    letter-spacing: 8px;
+
+    /* espaciado entre palabra y palabra */
+    word-spacing: 15px;
+
+    /* Fuente importada a traves de un CDN */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
