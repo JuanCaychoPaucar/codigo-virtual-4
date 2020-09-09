@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.formulario{
+    border: 2px solid #5e48a0;
+    border-radius: 10px;
+    height: 550px;
+    width: 450px;
+    margin: 50px auto;
+    padding: 60px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.formulario__title{
+    font-size: 40px;
+    font-weight: 700;
+    color: #593F9E;
+}
+
+.formulario__parrafo{
+    margin: 10px 0px;
+    color: #9E9FAE;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.formulario__label{
+    font-size: 15px;
+    color: #593F9E;
+    font-weight: 700;
+}
+
+.formulario__input{
+    margin-top: 6px;
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    outline: none;
+    border-left: 5px solid #593F9E;
+    border-radius: 5px;
+    background-color: #ECEBF3;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.formulario__checkbox{
+    margin-right: 10px;
+    color: #9E9FAE;
+    font-size: 14px;
+}
+
+.formulario__a{
+    margin-left: 80px;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.formulario__signin{
+    border: 2px solid #5D46A0;
+    margin-top: 10px;
+    padding: 12px 45px;
+    color: white;
+    background-color: #5D46A0;
+    border-radius: 3px;
+}
+
+.formulario__signup{
+    margin-left: 45px;
+    margin-top: 10px;
+    border: 2px solid #5D46A0;
+    padding: 12px 45px;
+    color: 5D46A0;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
