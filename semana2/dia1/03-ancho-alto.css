@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
+/* Selecciona a todos los elementos del DOM */
+*{
+    /* regla para que el padding y el borde de un elemento noafecten en su tamaño estableido */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body{
     font-family: "Poppins", sans-serif;
     background-color: #444;
@@ -21,8 +29,34 @@ body{
 .main{
     background-color: #aaa;
     width: 1200px;
+    padding-bottom: 20px;
 }
 
 footer p{
     text-align: center;
+}
+
+.main__imagenes{
+    height: 100px;
+    /* Controla ek desvorde de los hijos de un elemento
+    Si se desborda, entonces se oculta */
+    /* overflow: hidden; */
+    /* SI el contenido es muy grande en el eje Y, se va a dibujar un scroll */
+    overflow-y: scroll;
+}
+
+.main__descripcion{
+    height: 100px;
+    width: 100px;
+    background-color: orange;
+    border: 5px solid white;
+    margin-bottom: 21px;
+    padding: 5px;
+}
+
+.main__articulos{
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+    background-color: plum;
 }

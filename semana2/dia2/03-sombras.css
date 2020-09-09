@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.formulario {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    /* Sombra: color, avanza en x, avanza en y, difuminado
+    inset: sombra interna
+    NEOMORFISMO*/
+    /* box-shadow: #bbb 0px 0px 5px inset;
+    border-radius: 10px; */
+    border-radius: 26px;
+    background: #f3d3d3;
+    box-shadow: 7px 7px 14px #cfb3b3, -7px -7px 14px #fff3f3;
+}
+
+.formulario__input, .formulario__mensaje {
+    width: 100%;
+    border-radius: 26px;
+    background: #f3d3d3;
+    box-shadow: inset 7px 7px 14px #cfb3b3, inset -7px -7px 14px #fff3f3;
+}

@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.formulario {
+    border: 2px solid #6c14be;
+    border-radius: 20px;
+    width: 500px;
+    height: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.formulario__submit {
+    border: none;
+    padding: 10px;
+    color: white;
+    background-color: #6c14be;
+    border-radius: 3px;
+    margin-top: 10px;
+    border-bottom: 4px solid #250147;
+}
+
+.formulario__input {
+    width: 100%;
+    padding: 5px 25px;
+    border: none;
+    /* borde exterior, sin embargo no es tomado en cuenta para calcular el ancho ni el alto de un elemento. Siempre esta flotando */
+    outline: none;
+    border-bottom: 1px solid #e5b8ff;
+    background-color: #fcf6ff;
+    background-image: url("./Vector.svg");
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 20px 20px;
+}
+
+.formulario__mensaje{
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    background-color: #fcf6ff;
+    border: 1px solid #e5b8ff;
+    margin-top: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
