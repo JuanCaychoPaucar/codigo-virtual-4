@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  height: 60px;
+  background-color: #444;
+}
+
+.main__menu {
+  width: 200px;
+  background-color: #555;
+  display: inline-block;
+}
+
+/* block: ocupa el 100% del ancho del padre */
+/* inline-block: ocupa el ancho del contenido o el ancho establecido mediante CSS.
+    Para distribucion de pantalla no nos sirve, pues deja un pequeño espacio entre los elementos */
+/* inline: ocupa elancho del contenido. No puede establecerse su ancho con CSS */
+.main__noticias {
+  width: 600px;
+  background-color: #666;
+  display: inline-block;
+}
+
+.header__item{
+    display: inline-block;
+    color: white;
+    padding: 5px 10px;
+}
+
+

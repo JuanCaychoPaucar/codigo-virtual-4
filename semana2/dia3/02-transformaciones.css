@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.card, .card2, .card3, .card4{
+    width: 200px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    box-shadow: #aaa 0px 0px 10px;
+}
+
+.card:hover{
+    /* scale: cuanto va a crecer un elemento en sus ejes x y */
+    transform: scale(1.05,1.05);
+    box-shadow: #aaa 0px 0px 5px;
+}
+
+.card2:hover{
+    /* rotate: cuantos grados va a rotar el elemento. valores de 0 a 360 grados */
+    transform: rotate(10deg);
+}
+
+.card3:hover{
+    /* rotate: cuantos grados va a rotar el elemento. valores de 0 a 360 grados */
+    transform: translate(100%, 100%);
+}
+
+.card4{
+    
+}
