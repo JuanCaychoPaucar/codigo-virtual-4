@@ -1,0 +1,104 @@
+/* POSICIONAMIENTO CCS */
+/* 
+_ static: todos los elementos viene con este valor
+_ relative: sirve para mover un elemento a partir de su posicion normal.
+    - top: indica la cantiad de (px, rem, em, %) que un elemento se desplaza desde el techo (parte superior).
+            Ejem: top: 5px;
+
+    - left: indica la cantiad de (px, rem, em, %) que un elemento se desplaza desde la izquierda .
+            Ejem: left: 5px;
+    
+    OJO: cuando el elemento se mueve, su espacio no es ocupado por otro elemento. Tampoco desplaza a otros elementos.
+
+_ absolute: sirve para mover un elemento, sin embargo:
+    - Si su padre no tiene position relative, el elemento puede ubicarse en el area del proximo padre relativo.
+    - Todos los emas elementos ocupan su lugar el el elemento absoluto da la sensacion que flotara sin respetar su flujo normal.
+
+        - top       : desde el techo
+        - bottom    : desde el piso
+        - left      : desde la izquierda
+        - right     : desde la derecha
+        
+_ fixed: Sirve para mover un elemento, sin embargo:
+    - El punto de referencia es el viewport (la ventana del navegador). Es decir, la parte visible del navegador.
+
+*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #444;
+  padding-top: 60px;
+}
+
+.main {
+  width: 800px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  height: 4000px;
+  margin: 0px auto;
+
+  /* lo colocamos para que el circulo se ubique dentro de la clase padre main */
+  position: relative;
+}
+
+.cuadrado {
+  width: 100px;
+  height: 100px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e49804;
+
+  /* ya podra moverse al colocarle position: relative. Y vemos que el elemento no desplaza al otro */
+  position: relative;
+  top: 8px;
+
+  /* calc: es una fucnion que sirvepara hacer operaciones matematicas entre distintas unidades de medida, ejem: 50% del tamaño del padre- 50px que es la mitad del ancho del elemento */
+  left: calc(50% - 50px);
+}
+
+.cuadrado2 {
+  width: 100px;
+  height: 100px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #79b5f1;
+}
+
+/* path-clipclip-path para dibujar giguras geometricas. Investigar */
+.circulo {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ff9bf2;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.parrafo {
+  color: white;
+}
+
+.boton-crear {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 1px solid #befdbe;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.header {
+  height: 60px;
+  width: 100%;
+  background: -webkit-linear-gradient(left, #76e276, #a9e2a9);
+  position: fixed;
+  top: 0;
+}
