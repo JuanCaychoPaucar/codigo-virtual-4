@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.padre {
+  border: 1px solid tomato;
+
+  /* elemento padre sera flex. Hace que todos sus hijos se pongan en una misma fila, ocupando segun el tamaño de su contenido (de los hijos)*/
+  /* convertir a un elemento en padre flexible */
+  display: flex;
+  /* si elegimos display: flex, por defecto su felx-direction esta en row */
+  /* propiedad por defecto que indica que todos sus hijos se ubican en una misma fila */
+  /* PROPIEDADES POR DEFECTO */
+  /* flex-direction: row; */
+  /* flex-wrap: nowrap; */
+
+  /* propiedad que coloca a los hijos en una sola columna */
+  /* flex-direction: column; */
+
+  /* con wrap si se respetan los anchos de los elementos. El width */
+  /* propiedad para que los hijos colapsen en caso necesiten mas ancho que el del padre */
+  flex-wrap: wrap;
+}
+
+.caja-1,
+.caja-2,
+.caja-3,
+.caja-4 {
+  border: 1px solid black;
+
+  /* con flex, no se respeta el tamaño que le coloquemos, si este fuera mas grande que el ancho de la pantalla. No hace scroll */
+  /* width: 500px; */
+
+  /* porcentaje del padre */
+  width: 25%;
+}
+
+.caja-1{
+    width: 200px;
+    background-color: teal;
+}
+
+
+.seccion2{
+    display: flex;
+}
+
+.seccion2__1{
+    /* flex: numero. Es como relacion de aspecto. Se suman todos los pesos de los hijos y eses es el 100%. Luego se distribuye entre los pesos de cada hijo */
+    /* con esto no colapsan, pues se distribuyen siempre en el ancho de la pantalla */
+    /* flex: 2; */
+    border: 1px solid red;
+
+    width: 240px;
+    background-color: teal;
+}
+
+.seccion2__2{
+    flex: 1;
+    border: 1px solid red;
+}
+
+.seccion2__3{
+    flex: 1;
+    border: 1px solid red;
+}
+
+.seccion2__4{
+    flex: 1;
+    border: 1px solid red;
+}
+
+.header{
+    height: 60px;
+    background-color: tomato;
+}
+
+.header__lista{
+    height: 100%;
+    background-color: teal;
+    display: flex;
+    list-style: none;
+}
+
+.header__item{
+    flex: 1;
+    border: 1px solid yellow;
+}

@@ -1,0 +1,92 @@
+:root {
+  --primary: #df844f;
+  --primary-light: #dda07d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  height: 60px;
+  background: -webkit-linear-gradient(
+    left,
+    var(--primary),
+    var(--primary-light),
+    var(--primary)
+  );
+
+  /* como .header es el padre, este a su vez convierte en flex a sus hijos */
+  display: flex;
+}
+
+.header__logo {
+  display: flex;
+  height: 100%;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  /* background-color: violet; */
+}
+
+.header__logo img {
+  height: 50%;
+  margin-right: 20px;
+}
+
+.header__logo p {
+  color: white;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.header__nav {
+  /* esta clase se vuelve flexible, debido a que el padre (headeres flexible) */
+  flex: 1;
+  /* background-color: violet; */
+}
+
+.header__list {
+  list-style: none;
+  display: flex;
+  /* background-color: turquoise; */
+  height: 100%;
+}
+
+.header__item {
+  /* podemos usar flex:1, ya que el padre (header__list) lo vuelve flexible */
+  flex: 1;
+  /* background-color: yellow; */
+
+  /* para que sus hijos que son los a(header__link), sean hijos flexibles */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.header__item:hover{
+    flex: 2;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* cuando seleccionamos el padre, el que sufre los cambios por el hover es el hijo */
+.header__item:hover .header__link{
+    font-size: 20px;
+}
+
+.header__link {
+  /* quita el subrayado al texto */
+  text-decoration: none;
+  color: white;
+  font: 20px;
+}
+
+
