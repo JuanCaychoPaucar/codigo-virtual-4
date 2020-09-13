@@ -27,6 +27,8 @@ body {
 
   /* como .header es el padre, este a su vez convierte en flex a sus hijos */
   display: flex;
+  z-index: 10;
+  position: relative;
 }
 
 .header__logo {
@@ -101,13 +103,52 @@ body {
 
 .main__menu {
   width: 220px;
-  border-color: black;
+  background-color: var(--primary);
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding-top: 60px;
+
+  /* con ponerlo en menor valor es suficiente. Con ello se puede ver el logo
+    y en el header le ponemos:
+    z-index: 10;
+    position: relative;
+  */
+  z-index: 0;
+}
+
+.main__list {
+  list-style: none;
+}
+
+.main__item {
+  background-color: #e63629;
+  height: 60px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+  cursor: pointer;
+  transition: background-color, 0.3s ease;
+}
+
+.main__item:hover{
+  background-color: #d4837d;
+}
+
+.main__item i{
+  margin-right: 15px;
 }
 
 .main__container {
   /* si los hijos felxibles no tienen una altura establecida, entonces asumen el 100% del height respecto del padre */
 
-  flex: 1;
+  /* flex: 1; */
+
+  margin-left: 220px;
+  width: calc(100% -220px);
   background-color: #eee;
 
   /* para que los cards este en una linea */
@@ -142,7 +183,7 @@ body {
   transition: all 0.5s ease;
 }
 
-.card:hover{
+.card:hover {
   transform: scale(1.05, 1.05);
   box-shadow: #aaa 0px 0px 20px;
 }
