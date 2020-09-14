@@ -1,61 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
 
-    <title>Frontend Mentor | Social proof section</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
-  </head>
-  <body>
-    10,000+ of our users love our products.
+  <title>Frontend Mentor | Social proof section</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
 
-    We only provide great products combined with excellent customer service.
-    See what our satisfied customers are saying about our services.
-    
-    Rated 5 Stars in Reviews
-    Rated 5 Stars in Report Guru
-    Rated 5 Stars in BestTech
-    
-    Colton Smith 
-    Verified Buyer
-    "We needed the same printed design as the one we had ordered a week prior.
-    Not only did they find the original order, but we also received it in time.
-    Excellent!"
-    
-    Irene Roberts 
-    Verified Buyer
-    "Customer service is always excellent and very quick turn around. Completely
-    delighted with the simplicity of the purchase and the speed of delivery."
-    
-    Anne Wallace 
-    Verified Buyer
-    "Put an order with this company and can only praise them for the very high
-    standard. Will definitely use them again and recommend them to everyone!"
+<body>
+  <main class="main">
+    <section class="main__container">
+      <div class="container__top">
+        <div class="top-1">
+          <h1 class="top-1__title">10,000+ of our users love our products.</h1>
+          <p class="top-1__description">
+            We only provide great products combined with excellent customer service.
+            See what our satisfied customers are saying about our services.
+          </p>
+        </div>
+        <div class="top-2">
+          <ul class="top-2__list">
+            <li class="top-2__item item1">
+              <div class="item__img">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+              </div>
+              Rated 5 Stars in Reviews
+            </li>
+            <li class="top-2__item item2">
+              <div class="item__img">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+              </div>
+              Rated 5 Stars in Report Guru
+            </li>
+            <li class="top-2__item item3">
+              <div class="item__img">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+                <img class="img__star" src="./images/icon-star.svg" alt="">
+              </div>
+              Rated 5 Stars in BestTech
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container__bottom">
+        <div class="card__container">
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
-  </body>
+          <div class="card">
+            <div class="card__header">
+              <img class="card__header-img" src="./images/image-colton.jpg" alt="">
+              <div class="card__header-client">
+                <p class="client__name">
+                  Colton Smith
+                </p>
+                <p class="client__verified">
+                  Verified Buyer
+                </p>
+              </div>
+            </div>
+            <div class="card__description">
+              "We needed the same printed design as the one we had ordered a week prior.
+              Not only did they find the original order, but we also received it in time.
+              Excellent!"
+            </div>
+          </div>
+
+          <div class="card card2">
+            <div class="card__header">
+              <img class="card__header-img" src="./images/image-irene.jpg" alt="">
+              <div class="card__header-client">
+                <p class="client__name">
+                  Irene Roberts
+                </p>
+                <p class="client__verified">
+                  Verified Buyer
+                </p>
+              </div>
+            </div>
+            <div class="card__description">
+              "Customer service is always excellent and very quick turn around. Completely
+              delighted with the simplicity of the purchase and the speed of delivery."
+            </div>
+          </div>
+
+          <div class="card card3">
+            <div class="card__header">
+              <img class="card__header-img" src="./images/image-anne.jpg" alt="">
+              <div class="card__header-client">
+                <p class="client__name">
+                  Anne Wallace
+                </p>
+                <p class="client__verified">
+                  Verified Buyer
+                </p>
+              </div>
+            </div>
+            <div class="card__description">
+              "Put an order with this company and can only praise them for the very high
+              standard. Will definitely use them again and recommend them to everyone!"
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/JuanCaychoPaucar" target="_blank">Juan Caycho</a>.
+    </section>
+  </main>
+
+</body>
+
 </html>
