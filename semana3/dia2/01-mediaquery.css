@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* algunas veces se le coloca el tamaño por defecto de 16px, pues algunos navegadores (version antigua) tienen otra medida */
+/* podemos colocar:
+    html{
+
+    }
+
+    o sino
+
+    :root{
+
+    }
+*/
+html {
+  font-size: 16px;
+}
+
+.header {
+  /* 16px es el tamaño de la fuente de la letra. Por defecto lo coloca el navegador
+        1rem = 16px
+        3.5rem = 56px
+    */
+  /* 
+        rem: tamaño de letra del documento en general
+        em: tamaño de letra del padre directo de un elemento
+    */
+
+  height: 3.5rem;
+  background-color: #555;
+}
+
+.main{
+    display: flex;
+    min-height: calc(100vh - 3.75rem);
+    background-color: #ccc;
+    /* flex-wrap: wrap; */
+}
+
+.section-left{
+    width: 50%;
+    height: 200px;
+    background: #9bcafa;
+}
+
+.section-right{
+    width: 50%;
+    height: 200px;
+    background: #bdfa8e;
+}
+
+/* ancho tablet */
+@media(max-width: 768px){
+    .main{
+        flex-direction: column;
+    }
+    .section-left, .section-right{
+        width: 100%;
+    }
+}

@@ -1,0 +1,28 @@
+/* HEADER */
+
+.header {
+  height: 60px;
+  max-width: var(--width);
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.header__nav {
+}
+
+.header__list {
+  list-style: none;
+  display: flex;
+}
+
+.header__item {
+  margin-left: 3rem;
+}
+
+.header__link {
+  text-decoration: none;
+  color: var(--width);
+}
