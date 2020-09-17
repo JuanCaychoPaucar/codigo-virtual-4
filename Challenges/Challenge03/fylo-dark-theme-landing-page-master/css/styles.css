@@ -3,6 +3,11 @@
 @import url("./header.css");
 @import url("./hero.css");
 @import url("./features.css");
+@import url("./button.css");
+@import url("./tutorial.css");
+@import url("./comments.css");
+@import url("./subscribe.css");
+@import url("./footer.css");
 
 * {
   margin: 0;
