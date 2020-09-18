@@ -2,9 +2,15 @@
 
 .footer {
   background-color: var(--dark-blue-3);
+}
+
+.footer__container {
   display: flex;
   flex-direction: column;
-  padding: 15rem 8rem 8rem 8rem;
+  padding: 15rem 0 8rem 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  /* background-color: darkorange; */
 }
 
 .footer__figure {
@@ -16,7 +22,7 @@
 }
 
 .footer__location {
-  flex: 1;
+  flex: 2;
   display: flex;
   padding-right: 3rem;
 }

@@ -1,7 +1,7 @@
 /* HERO */
 
 .hero {
-  max-width: 960px;
+  max-width: 768px;
   margin: 0 auto;
   text-align: center;
   /* background-color: white; */
@@ -9,7 +9,7 @@
 
 /* margen a todos sus elementos. Hijos en primer nivel (>) */
 .hero > * {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero__title {
