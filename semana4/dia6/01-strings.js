@@ -112,32 +112,149 @@ const posicionesDeDiablo2 = () => {
 posicionesDeDiablo2();
 
 /**
- * Función que imprime la cantidad de vocales de la frase
- * sin importar que sean mayuscuclas o minusculas
- */
-
-/**
- * Función que imprime la cantidad de palabras que tenga una frase
- */
-
-/**
- *Función que imprime si una frase es un palíndromo
- ¿qué es un palíndromo?
- una frase que se lee igual al derecho y al revés
- ejemplo:
-  anita lava la tina (si consideramos qutiar los espacios en blanco, la frase se lee igual)
-  radar
-  amor a roma
-  la ruta natural
- */
-
-/**
  * string.trim()
  * retorna la misma cadena sin incluir los espacios en blanco.
  * TANTO AL FINAL COMO AL INICIO.
- * NO LOS ESPACIOS INTERMEDIOS
+ * NO APLICA PARA LOS ESPACIOS INTERMEDIOS
  */
 
- let frase2 = "  cualquier frase interna    ";
- console.log(`frase 2: ${frase2}`);
- console.log(`frase 2 con trim: ${frase2.trim()}`);
+let frase2 = "  cualquier frase interna    ";
+console.log(`frase 2: ${frase2}`);
+console.log(`frase 2 con trim: ${frase2.trim()}`);
+
+/**
+ * EJERCICIO 01
+ * Función que imprime la cantidad de vocales de la frase
+ * sin importar que sean mayusculas o minusculas
+ */
+
+const fraseEjercicio1 = "Siempre pArece Imposible, hasta que se hacE";
+const vocales = "aeiou";
+
+let cantidadVocales = (parametro) => {
+  let contador = 0;
+  let posicion = 0;
+  let fraseTemporal = fraseEjercicio1.toLowerCase();
+
+  for (let c = 0; c < parametro.length; c++) {
+    while (true) {
+      posicion = fraseTemporal.indexOf(parametro[c], posicion);
+      if (posicion !== -1) {
+        contador++;
+        posicion++;
+      } else {
+        break;
+      }
+    }
+  }
+  return contador;
+};
+console.log("EJERCICIO 01");
+console.log(`Vocales en una frase: ${cantidadVocales(vocales)}`);
+
+/**
+ * EJERCICIO 02
+ * Función que imprime la cantidad de palabras que tenga una frase
+ */
+
+const fraseEjercicio2 =
+  "      El éxito       es caer   siete       veces y levantarte            ocho              ";
+
+let cantidadPalabras = (parametro2) => {
+  let contador2 = 0;
+  let posicion2 = 0;
+  let fraseTemporal2 = parametro2.trim();
+
+  while (true) {
+    posicion2 = fraseTemporal2.indexOf(" "); // buscamos un espacio en blanco
+    if (posicion2 !== -1) {
+      fraseTemporal2 = fraseTemporal2
+        .substring(posicion2, fraseTemporal2.length)
+        .trim();
+      contador2++;
+    } else {
+      break;
+    }
+  }
+  if (parametro2.length === 0) {
+    return 0;
+  } else {
+    return contador2 + 1;
+  }
+};
+
+console.log("EJERCICIO 02");
+console.log(`Palabras en una frase: ${cantidadPalabras(fraseEjercicio2)}`);
+
+/**
+ * EJERCICIO 03
+ * Función que imprime si una frase es un palíndromo
+ * ¿qué es un palíndromo?
+ * una frase que se lee igual al derecho y al revés
+ * ejemplo:
+ * anita lava la tina (si consideramos quitar los espacios en blanco, la frase se lee igual)
+ * radar
+ * amor a roma
+ * la ruta natural
+ */
+
+/**
+ * HINT:
+  -- antes de cualquiera de las dos formas, quitarle los espacios intermedios
+  ¿cómo?
+  recorrer toda la cadena e ir sumando letra a letra un nuevo string
+  y cada vez que se encuentre un espacio en blanco, saltar a la sigueinte
+  iteración
+
+  forma 1: 
+  - Recorrer toda la cadena de caracteres desde el final hasta el inicio,
+    en cada iteración, ir sumando un string que incialmene esté vacío con 
+    cada nuevo caracter. Al final de todas las iteraciones, comparar el 
+    string original con el string creado en el ciclo for
+  
+  forma 2:
+  - Recorrer toda la cadena de caracteres, desde el inicio hasta la mitad
+    de la cadena y comparar en cada iteración por ejemplo lo siguiente:
+    Iteración 1:
+    posición 0 con posición length-0
+    Iteración 2:
+    posición 1 con posición length-1
+    Iteración 3:
+    posición 2 con posición lentgh-2
+    y así sucesivamente... en cada iteración deben de compararse que ambos
+    caracteres son iguales.
+ */
+
+const fraseEjercicio3 = "        Amor a Roma      ";
+
+let palindromo = (parametro3) => {
+  let fraseTemporal3 = parametro3.toLowerCase().trim();
+  let fraseNueva = "";
+  let fraseSinEspacios = "";
+  let caracter = "";
+
+  // nueva frase formada del final hasta el inicio
+  for (let c = fraseTemporal3.length - 1; c >= 0; c--) {
+    caracter = fraseTemporal3[c];
+    if (caracter !== " ") {
+      fraseNueva = fraseNueva + caracter;
+    }
+  }
+
+  // frase original sin espacios
+  for (let i = 0; i < fraseTemporal3.length; i++) {
+    caracter = fraseTemporal3[i];
+    if (caracter !== " ") {
+      fraseSinEspacios = fraseSinEspacios + caracter;
+    }
+  }
+
+  if (fraseSinEspacios === fraseNueva) {
+    return "Si es palindroma";
+  } else {
+    return "No es palindroma";
+  }
+};
+
+console.log("EJERCICIO 03");
+console.log(`Palabras palindromas: ${palindromo(fraseEjercicio3)}`);
