@@ -8,6 +8,7 @@
       body {
         background-color: #444;
       }
+
       form {
         background-color: white;
         border: 1px solid #ccc;
@@ -32,6 +33,16 @@
       .borde-rojo {
         border: 3px solid crimson;
       }
+
+      .paper {
+        background-color: #fafafa;
+        padding: 2rem;
+        margin-top: 1rem;
+      }
+
+      table {
+        width: 100%;
+      }
     </style>
   </head>
 
@@ -45,14 +56,16 @@
 
       <a href="https://www.google.com" id="link">¿Olvidaste tu contraseña</a>
       <br />
-      <small class="texto-rojo" id="helper" hidden>Todos los campos deben estar llenos</small>
+      <small class="texto-rojo" id="helper" hidden
+        >Todos los campos deben estar llenos</small
+      >
       <hr />
 
       <button type="submit">Crear Usuario</button>
       <button type="reset">Cancelar</button>
     </form>
     <br />
-    <section>
+    <section class="paper">
       <table border="1">
         <thead>
           <th>Nro</th>
@@ -64,6 +77,6 @@
       </table>
     </section>
 
-    <script src="./04-eventos-forms.js"></script>
+    <script src="./01-localstorage-json.js"></script>
   </body>
 </html>

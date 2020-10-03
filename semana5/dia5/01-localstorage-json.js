@@ -12,6 +12,8 @@ const helper = document.getElementById("helper");
 
 let usuarios = [];
 
+
+
 const limpiarErrores = () => {
   // quitar el borde rojo al formulario
   formulario.classList.remove("borde-rojo");
@@ -95,6 +97,19 @@ const redibujarTbody = () => {
   });
   tbody.appendChild(tbodyFalso);
 
+  // aqui guardaremos a todos los usuarios en el localstorage
+  /**
+   * JSON = es una clase (tipo Math) que sirve para trabajar con estructuras JSON.
+   * Las convierte a String y tambien convierte de un String a un objeto JSON.
+   */
+
+  // 1. convirtiendo un arreglo de objetos a un String
+  const usuariosString = JSON.stringify(usuarios);
+  console.log(usuariosString);
+
+  // 2. guardar los usuarios string en el localstorage
+  localStorage.setItem("usuarios", usuariosString);
+
   /**
    * colocar el cursor nuevamente en el campo del nombre,
    * para que el usuario este listo para ingresar un siguiente registro
@@ -153,3 +168,18 @@ link.onclick = (evento) => {
   evento.preventDefault();
   console.log("Dieron clic al hipervinculo");
 };
+
+
+// funcion que verifica si tenemos usuarios en el localstorage, para setear el arreglo de usuarios
+const verificarStorage = () => {
+    const usuariosStorage = window.localStorage.getItem("usuarios");
+    if (usuariosStorage !== null) {
+      // que si existe la clave usuarios
+      // 1.  Convertir un STRING a un objeto JSON
+      usuarios = JSON.parse(usuariosStorage);
+      console.log(usuarios);
+      redibujarTbody();
+    }
+  };
+  
+  verificarStorage();
