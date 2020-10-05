@@ -2,6 +2,8 @@
 @import url("./header.css");
 @import url("./factura.css");
 @import url("./producto.css");
+@import url("./reportes.css");
+@import url("./index.css");
 
 * {
   margin: 0;

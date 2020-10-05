@@ -86,8 +86,11 @@ const redibujarTbody = () => {
     tdPrecioTotal.classList.add("tbody__total");
 
     let tdAct = document.createElement("td");
+    tdAct.classList.add("tbody__act");
+
     let btn = document.createElement("button");
-    btn.innerText = "ELIMINAR";
+    btn.classList.add("btnBody__eliminar");
+    btn.innerText = "X";
     btn.onclick = () => {
       // Eliminar
       eliminarUsuario(ind);
