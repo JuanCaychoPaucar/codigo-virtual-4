@@ -20,6 +20,7 @@
 .header__list {
   list-style: none;
   display: flex;
+  height: 100%;
 }
 
 .header__item {

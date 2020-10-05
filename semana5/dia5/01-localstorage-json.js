@@ -19,7 +19,7 @@ const limpiarErrores = () => {
   formulario.classList.remove("borde-rojo");
 
   // ocultar el small (helper)
-  helper.setAttribute("Hidden", true);
+  helper.setAttribute("hidden", true);
 };
 
 const generarError = () => {
