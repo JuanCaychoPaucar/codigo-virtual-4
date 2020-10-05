@@ -43,6 +43,19 @@ precioTotal.setAttribute("disabled", "true");
 
 let productosAgregados = [];
 
+// ELIMINAR USUARIO
+const eliminarUsuario = (posicion) => {
+  console.log("Eliminando " + posicion);
+  
+  productosAgregados = productosAgregados.filter((usu,i) => {
+    if (i !== posicion) {
+      return usu;
+    }
+  });
+
+  redibujarTbody();
+};
+
 // REDIBUJAR TBODY
 const redibujarTbody = () => {
   // limpiamos el contenido
@@ -51,7 +64,7 @@ const redibujarTbody = () => {
   //tbody falso
   let tbodyFalso = new DocumentFragment();
 
-  productosAgregados.forEach((pro) => {
+  productosAgregados.forEach((pro,ind) => {
     // CREAMOS LOS ELEMENTOS HTML
     let tr = document.createElement("tr");
     tr.classList.add("tr");
@@ -72,10 +85,21 @@ const redibujarTbody = () => {
     tdPrecioTotal.innerText = pro.precioTotal;
     tdPrecioTotal.classList.add("tbody__total");
 
+    let tdAct = document.createElement("td");
+    let btn = document.createElement("button");
+    btn.innerText = "ELIMINAR";
+    btn.onclick = () => {
+      // Eliminar
+      eliminarUsuario(ind);
+    };    
+
+    tdAct.appendChild(btn);
+
     tr.appendChild(tdCantidad);
     tr.appendChild(tdDescripcion);
     tr.appendChild(tdPrecioUnitario);
     tr.appendChild(tdPrecioTotal);
+    tr.appendChild(tdAct);
 
     tbodyFalso.appendChild(tr);
   });

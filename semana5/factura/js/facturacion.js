@@ -70,17 +70,20 @@ factura.addEventListener("submit", (evento) => {
     direccion: facturaDireccion.value,
     fecha: facturaFecha.value,
     detalle: productosAgregados,
+    totalFactura: totalInput.value,
   };
-
+    // verificarStorage();
   // agregamos el objeto al arreglo
   facturas.push(objFactura);
+  console.log("pushFacturas");
+  console.log(facturas);
 
   // limpiamos los datos ingresados
   facturaNombre.value = "";
   facturaRuc.value = "";
   facturaDireccion.value = "";
   fechaActual();
-  verificarStorage();
+  
   tbody.innerHTML = "";
   totalInput.value = "";
 
@@ -107,6 +110,7 @@ factura.addEventListener("submit", (evento) => {
   productosAgregados = [];
   console.log("PRODUCTOS AGREGADOS");
   console.log(productosAgregados);
+  verificarStorage();
 });
 
 // LLAMADO A FUNCIONES
@@ -118,6 +122,7 @@ const verificarStorage = () => {
     // que si existe la clave facturas
     // 1.  Convertir un STRING a un objeto JSON
     facturas = JSON.parse(facturasStorage);
+    console.log("Json de facturas");
     console.log(facturas);
     // redibujarTbody();
   }
