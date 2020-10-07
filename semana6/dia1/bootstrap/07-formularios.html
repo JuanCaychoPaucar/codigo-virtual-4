@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="display-4 text-danger text-center mt-5">
+        Formularios en Bootstrap
+    </h1>
+
+    <main class="container">
+        <h3>Formulario de una sola Columna</h3>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <form action="">
+                    <div class="form-group">
+                        <label for="">Nombre del Plato:</label>
+                        <input type="text" class="form-control" placeholder="Ejm: Seco de cabrito" />
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="text" class="form-control" placeholder="Ejm: correo@correo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Categoria</label>
+                        <select name="" id="" class="form-control">
+                            <option value="0">-- Seleccione --</option>
+                            <option value="">Entrada</option>
+                            <option value="">Postre</option>
+                            <option value="">Plato de fondo</option>
+                            <option value="">Bebida</option>
+                        </select>
+                        <small class="text-danger">* Este campo es obligatorio</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Ingredientes:</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input id="inputCebolla" type="checkbox"
+                                        aria-label="Checkbox for following text input">
+                                </div>
+                            </div>
+                            <label for="inputCebolla" class="form-control">Cebolla</label>
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input id="inputAjos" type="checkbox"
+                                        aria-label="Checkbox for following text input">
+                                </div>
+                            </div>
+                            <label for="inputAjos" class="form-control">Ajos</label>
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input id="inputPollo" type="checkbox"
+                                        aria-label="Checkbox for following text input">
+                                </div>
+                            </div>
+                            <label for="inputPollo" class="form-control">Pollo</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Tiempo de coccion</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input id="radio1-2" type="radio" name="radioTiempo"
+                                        aria-label="Radio button for following text input">
+                                </div>
+                            </div>
+                            <label for="radio1-2" class="form-control">de 1 a 2 horas</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input id="radio2-3" type="radio" name="radioTiempo"
+                                        aria-label="Radio button for following text input">
+                                </div>
+                            </div>
+                            <label for="radio2-3" class="form-control">de 2 a 3 horas</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Preparacion:</label>
+                        <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <buttom class="btn btn-primary" type="submit">Crear plato</buttom>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- ********************************** -->
+        <h3>Formulario de dos Columnas</h3>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <form action="" class="row">
+                    <div class="form-group col-md-6">
+                        <label for="">Nombres:</label>
+                        <input type="text" class="form-control" placeholder="Nombres">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Apellidos:</label>
+                        <input type="text" class="form-control" placeholder="Apellidos">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Nombres:</label>
+                        <input type="text" class="form-control" placeholder="Nombres">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Apellidos:</label>
+                        <input type="text" class="form-control" placeholder="Apellidos">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
