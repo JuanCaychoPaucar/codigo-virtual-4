@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <!-- CSS PARA DATATABLE -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css"> -->
+
+    <!-- https://datatables.net/examples/styling/bootstrap4 -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+
+    <title>Document</title>
+</head>
+
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">Action 1</a>
+                        <a class="dropdown-item" href="#">Action 2</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <main class="container pt-5">
+
+        <h1 class="display-4 text-danger">Datatables</h1>
+        <hr>
+        <section class="row">
+            <!-- <div class="col-md-4">
+                .....
+            </div> -->
+            <div class="col-md-12">
+                <!-- table>(thead>tr>th*5{Cabecera $})+(tbody>tr*20>td*5{Columna $}) -->
+                <table class="table table-striped table-bordered" id="miTabla">
+                    <thead>
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>CIUDAD</th>
+                            <th>PAIS</th>
+                            <th>CORREO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Adrian Pittman</td>
+                            <td>Picture Butte</td>
+                            <td>South Africa</td>
+                            <td>magna@quamquisdiam.org</td>
+                        </tr>
+                        <tr>
+                            <td>Bevis Colon</td>
+                            <td>Freiberg</td>
+                            <td>Nigeria</td>
+                            <td>venenatis.vel.faucibus@enim.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Irma Mcclure</td>
+                            <td>Yeovil</td>
+                            <td>Solomon Islands</td>
+                            <td>faucibus@ProindolorNulla.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Gillian Freeman</td>
+                            <td>Ribeirão das Neves</td>
+                            <td>Equatorial Guinea</td>
+                            <td>Aliquam.nisl.Nulla@urnanec.net</td>
+                        </tr>
+                        <tr>
+                            <td>Vera Moreno</td>
+                            <td>Ranchi</td>
+                            <td>United States Minor Outlying Islands</td>
+                            <td>fringilla.purus.mauris@pellentesqueSeddictum.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Alexandra Gonzalez</td>
+                            <td>Sherani</td>
+                            <td>Hungary</td>
+                            <td>et.commodo@urnaet.net</td>
+                        </tr>
+                        <tr>
+                            <td>Quin Bradford</td>
+                            <td>Fahler</td>
+                            <td>Chile</td>
+                            <td>tellus.Nunc@idante.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Risa Bentley</td>
+                            <td>Norfolk</td>
+                            <td>Mauritania</td>
+                            <td>vel@fringilla.org</td>
+                        </tr>
+                        <tr>
+                            <td>Hammett Mcclure</td>
+                            <td>Cuautla</td>
+                            <td>Puerto Rico</td>
+                            <td>massa.rutrum.magna@indolor.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Tamekah Sutton</td>
+                            <td>Río Claro</td>
+                            <td>Libya</td>
+                            <td>neque.In.ornare@utipsumac.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Lana Ross</td>
+                            <td>Rachecourt</td>
+                            <td>Guam</td>
+                            <td>ligula@nec.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Gil Roach</td>
+                            <td>San José del Guaviare</td>
+                            <td>Namibia</td>
+                            <td>Phasellus@semperet.org</td>
+                        </tr>
+                        <tr>
+                            <td>Xander Decker</td>
+                            <td>Haldia</td>
+                            <td>Nigeria</td>
+                            <td>tincidunt.pede.ac@egetipsumSuspendisse.org</td>
+                        </tr>
+                        <tr>
+                            <td>Ethan Lewis</td>
+                            <td>Sahiwal</td>
+                            <td>Guinea-Bissau</td>
+                            <td>mollis.Integer.tincidunt@orciUt.net</td>
+                        </tr>
+                        <tr>
+                            <td>Lee Yates</td>
+                            <td>Samsun</td>
+                            <td>Swaziland</td>
+                            <td>ipsum.leo@nec.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Andrew Chaney</td>
+                            <td>Plainevaux</td>
+                            <td>Paraguay</td>
+                            <td>nascetur.ridiculus.mus@fermentumarcuVestibulum.net</td>
+                        </tr>
+                        <tr>
+                            <td>Alec Guerra</td>
+                            <td>Allerona</td>
+                            <td>Korea, South</td>
+                            <td>ac.tellus.Suspendisse@consectetueradipiscing.org</td>
+                        </tr>
+                        <tr>
+                            <td>Christian Norris</td>
+                            <td>Corswarem</td>
+                            <td>Barbados</td>
+                            <td>ultricies@Nullamsuscipitest.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Kiona Fischer</td>
+                            <td>Solre-sur-Sambre</td>
+                            <td>Paraguay</td>
+                            <td>Pellentesque.habitant@amet.net</td>
+                        </tr>
+                        <tr>
+                            <td>Madeson Greene</td>
+                            <td>Wattrelos</td>
+                            <td>Spain</td>
+                            <td>leo.elementum@fringilla.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Ramona Daugherty</td>
+                            <td>Mombaruzzo</td>
+                            <td>Equatorial Guinea</td>
+                            <td>elit.Etiam@Cum.org</td>
+                        </tr>
+                        <tr>
+                            <td>Gary Odonnell</td>
+                            <td>Norman</td>
+                            <td>Romania</td>
+                            <td>condimentum.eget@sitametrisus.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Janna Miller</td>
+                            <td>Te Puke</td>
+                            <td>Congo (Brazzaville)</td>
+                            <td>nisl.sem@eleifendnondapibus.net</td>
+                        </tr>
+                        <tr>
+                            <td>Amethyst Beard</td>
+                            <td>Recklinghausen</td>
+                            <td>Cuba</td>
+                            <td>elit.Curabitur@sedsapienNunc.net</td>
+                        </tr>
+                        <tr>
+                            <td>Chandler Bailey</td>
+                            <td>Gressoney-La-Trinitè</td>
+                            <td>United States</td>
+                            <td>vulputate@eusemPellentesque.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Steven Barlow</td>
+                            <td>GŽrouville</td>
+                            <td>Turks and Caicos Islands</td>
+                            <td>lorem.ipsum.sodales@euismodurnaNullam.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Echo Sampson</td>
+                            <td>Balclutha</td>
+                            <td>Falkland Islands</td>
+                            <td>rutrum.magna@Duisat.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Zelenia Hawkins</td>
+                            <td>Elektrostal</td>
+                            <td>American Samoa</td>
+                            <td>turpis.nec@venenatis.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Samantha Ballard</td>
+                            <td>Bayonne</td>
+                            <td>Romania</td>
+                            <td>Fusce.fermentum@Nam.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Charles Morgan</td>
+                            <td>Amaro</td>
+                            <td>Somalia</td>
+                            <td>id.ante.Nunc@velit.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Cleo Eaton</td>
+                            <td>Borås</td>
+                            <td>Chile</td>
+                            <td>Proin@condimentum.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Athena Best</td>
+                            <td>Chalon-sur-Saône</td>
+                            <td>Puerto Rico</td>
+                            <td>dis.parturient@Nuncac.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Alfonso Becker</td>
+                            <td>Priolo Gargallo</td>
+                            <td>Czech Republic</td>
+                            <td>mauris.elit@eratEtiam.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Finn Castaneda</td>
+                            <td>Angoulême</td>
+                            <td>Greenland</td>
+                            <td>neque.Morbi.quis@lobortis.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Deborah Pace</td>
+                            <td>Tver</td>
+                            <td>Brunei</td>
+                            <td>molestie@dictumeuplacerat.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Steven Cannon</td>
+                            <td>Sluis</td>
+                            <td>Brunei</td>
+                            <td>Maecenas.ornare@Donecat.org</td>
+                        </tr>
+                        <tr>
+                            <td>Patience Marsh</td>
+                            <td>Castelseprio</td>
+                            <td>Falkland Islands</td>
+                            <td>erat.semper@Aliquamtinciduntnunc.org</td>
+                        </tr>
+                        <tr>
+                            <td>Kimberley Howell</td>
+                            <td>Juiz de Fora</td>
+                            <td>Venezuela</td>
+                            <td>suscipit.nonummy.Fusce@aliquet.org</td>
+                        </tr>
+                        <tr>
+                            <td>Ferdinand Powers</td>
+                            <td>Brechin</td>
+                            <td>Venezuela</td>
+                            <td>vel@Curabiturvel.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Roth Sellers</td>
+                            <td>Newark</td>
+                            <td>Falkland Islands</td>
+                            <td>sem@enim.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Leila Carrillo</td>
+                            <td>Vernole</td>
+                            <td>Portugal</td>
+                            <td>ullamcorper@malesuadavel.com</td>
+                        </tr>
+                        <tr>
+                            <td>Gil Meyers</td>
+                            <td>Merdorp</td>
+                            <td>Puerto Rico</td>
+                            <td>Cras.eu.tellus@tortorInteger.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Aristotle Fleming</td>
+                            <td>Tavier</td>
+                            <td>Liechtenstein</td>
+                            <td>Phasellus.dolor@libero.net</td>
+                        </tr>
+                        <tr>
+                            <td>Alfreda Vang</td>
+                            <td>Shangla</td>
+                            <td>Cook Islands</td>
+                            <td>Curae.Phasellus@auctorMaurisvel.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Odette Snyder</td>
+                            <td>Estación Central</td>
+                            <td>Malta</td>
+                            <td>blandit.congue@Aeneanegestas.com</td>
+                        </tr>
+                        <tr>
+                            <td>Wesley Callahan</td>
+                            <td>Haverhill</td>
+                            <td>Belgium</td>
+                            <td>euismod@Nunc.org</td>
+                        </tr>
+                        <tr>
+                            <td>Kevyn Carpenter</td>
+                            <td>Belford Roxo</td>
+                            <td>Mauritania</td>
+                            <td>orci.lobortis@facilisis.com</td>
+                        </tr>
+                        <tr>
+                            <td>Isabelle Craig</td>
+                            <td>Lesve</td>
+                            <td>Barbados</td>
+                            <td>quis@purus.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Fay Bryan</td>
+                            <td>Moustier-sur-Sambre</td>
+                            <td>Belgium</td>
+                            <td>nibh.dolor.nonummy@hendrerit.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Kimberly James</td>
+                            <td>Purral</td>
+                            <td>Libya</td>
+                            <td>ornare.placerat@lobortisrisus.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Chastity Barlow</td>
+                            <td>Middelkerke</td>
+                            <td>Portugal</td>
+                            <td>ac.mattis@Vestibulumuteros.com</td>
+                        </tr>
+                        <tr>
+                            <td>Adara Lamb</td>
+                            <td>Glossop</td>
+                            <td>Guam</td>
+                            <td>tellus@elementum.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Selma Terrell</td>
+                            <td>Fossato Serralta</td>
+                            <td>Mayotte</td>
+                            <td>at.augue.id@laciniaorciconsectetuer.net</td>
+                        </tr>
+                        <tr>
+                            <td>Rahim Nunez</td>
+                            <td>Couillet</td>
+                            <td>United Arab Emirates</td>
+                            <td>mi.lorem.vehicula@quistristiqueac.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Colorado Higgins</td>
+                            <td>Mansfield-et-Pontefract</td>
+                            <td>Tokelau</td>
+                            <td>Suspendisse.dui@nondapibus.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Olga Finch</td>
+                            <td>Mansfield-et-Pontefract</td>
+                            <td>Bulgaria</td>
+                            <td>Nunc.mauris.elit@dictumeu.org</td>
+                        </tr>
+                        <tr>
+                            <td>Kaseem Holden</td>
+                            <td>Tarakan</td>
+                            <td>Marshall Islands</td>
+                            <td>sit.amet@quis.net</td>
+                        </tr>
+                        <tr>
+                            <td>Roth Wooten</td>
+                            <td>Bridgwater</td>
+                            <td>Samoa</td>
+                            <td>tincidunt.pede.ac@malesuadaaugue.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Aurora Vega</td>
+                            <td>San Fele</td>
+                            <td>Honduras</td>
+                            <td>Phasellus@in.net</td>
+                        </tr>
+                        <tr>
+                            <td>Kamal Mccarthy</td>
+                            <td>Kawawachikamach</td>
+                            <td>Panama</td>
+                            <td>porttitor.eros.nec@euismodurna.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Yetta Cain</td>
+                            <td>Putre</td>
+                            <td>Sri Lanka</td>
+                            <td>dis@felisDonec.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Lars Wilkerson</td>
+                            <td>Medellín</td>
+                            <td>Djibouti</td>
+                            <td>nibh@lobortis.com</td>
+                        </tr>
+                        <tr>
+                            <td>Sebastian Hart</td>
+                            <td>Soledad de Graciano Sánchez</td>
+                            <td>Western Sahara</td>
+                            <td>Nullam.velit@utodiovel.com</td>
+                        </tr>
+                        <tr>
+                            <td>Griffin Lambert</td>
+                            <td>Williams Lake</td>
+                            <td>Myanmar</td>
+                            <td>lacus.Mauris.non@luctusCurabitur.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Tamara Oneil</td>
+                            <td>Herdersem</td>
+                            <td>Kuwait</td>
+                            <td>a@sitamet.com</td>
+                        </tr>
+                        <tr>
+                            <td>Cailin Boyd</td>
+                            <td>Puerto López</td>
+                            <td>Peru</td>
+                            <td>In.lorem.Donec@maurisSuspendisse.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Daryl England</td>
+                            <td>Angleur</td>
+                            <td>Switzerland</td>
+                            <td>elit.pharetra.ut@feugiatnec.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Norman Vargas</td>
+                            <td>Opprebais</td>
+                            <td>Saudi Arabia</td>
+                            <td>felis.Nulla.tempor@tempusscelerisque.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Mufutau Small</td>
+                            <td>Redwater</td>
+                            <td>Cape Verde</td>
+                            <td>magna@enim.com</td>
+                        </tr>
+                        <tr>
+                            <td>Joy Walker</td>
+                            <td>New Orleans</td>
+                            <td>Portugal</td>
+                            <td>sollicitudin.commodo@placerataugue.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Maia Rosa</td>
+                            <td>San Vicente de Cañete</td>
+                            <td>Portugal</td>
+                            <td>bibendum.ullamcorper@arcuSed.org</td>
+                        </tr>
+                        <tr>
+                            <td>Hyatt Kemp</td>
+                            <td>Nives</td>
+                            <td>Sao Tome and Principe</td>
+                            <td>pharetra.felis.eget@musProinvel.net</td>
+                        </tr>
+                        <tr>
+                            <td>Jordan Lynn</td>
+                            <td>Victor Harbor</td>
+                            <td>Saint Helena, Ascension and Tristan da Cunha</td>
+                            <td>Nullam.scelerisque.neque@augueac.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Kareem Underwood</td>
+                            <td>Ibadan</td>
+                            <td>Uruguay</td>
+                            <td>amet.dapibus@Sed.org</td>
+                        </tr>
+                        <tr>
+                            <td>Phillip Avila</td>
+                            <td>Rutigliano</td>
+                            <td>Congo, the Democratic Republic of the</td>
+                            <td>tempor@idenim.org</td>
+                        </tr>
+                        <tr>
+                            <td>Chava Meyer</td>
+                            <td>Salamanca</td>
+                            <td>Costa Rica</td>
+                            <td>tempus.eu@libero.com</td>
+                        </tr>
+                        <tr>
+                            <td>Seth Watkins</td>
+                            <td>Narowal</td>
+                            <td>Reunion</td>
+                            <td>lobortis.ultrices@anteiaculisnec.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Benjamin Ward</td>
+                            <td>Baricella</td>
+                            <td>Central African Republic</td>
+                            <td>Suspendisse@tincidunt.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Blake Levy</td>
+                            <td>Okara</td>
+                            <td>Kyrgyzstan</td>
+                            <td>velit.Aliquam.nisl@ligula.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Orson Cline</td>
+                            <td>College</td>
+                            <td>Kuwait</td>
+                            <td>dolor.sit.amet@atarcu.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Sloane Ferrell</td>
+                            <td>Norfolk</td>
+                            <td>New Caledonia</td>
+                            <td>justo.Proin.non@quislectusNullam.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Macon Dorsey</td>
+                            <td>Campinas</td>
+                            <td>Solomon Islands</td>
+                            <td>nec.imperdiet.nec@eget.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Graham Bowen</td>
+                            <td>Colwood</td>
+                            <td>Paraguay</td>
+                            <td>Sed@magna.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Freya Peck</td>
+                            <td>Villers-la-Ville</td>
+                            <td>Croatia</td>
+                            <td>tempor@sagittisplaceratCras.com</td>
+                        </tr>
+                        <tr>
+                            <td>Oliver Wiley</td>
+                            <td>Waitakere</td>
+                            <td>Algeria</td>
+                            <td>tincidunt.adipiscing.Mauris@felisNullatempor.com</td>
+                        </tr>
+                        <tr>
+                            <td>Sydnee Frank</td>
+                            <td>Fulda</td>
+                            <td>Viet Nam</td>
+                            <td>eget.dictum.placerat@sedlibero.org</td>
+                        </tr>
+                        <tr>
+                            <td>Erin Osborne</td>
+                            <td>Imperatriz</td>
+                            <td>Antigua and Barbuda</td>
+                            <td>lacus@risus.com</td>
+                        </tr>
+                        <tr>
+                            <td>Doris Whitley</td>
+                            <td>Hofors</td>
+                            <td>Bermuda</td>
+                            <td>diam.lorem.auctor@lacusvarius.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Allegra Sharp</td>
+                            <td>La Serena</td>
+                            <td>Nicaragua</td>
+                            <td>Vivamus.molestie.dapibus@elementumdui.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Patience Bray</td>
+                            <td>Rochester</td>
+                            <td>Togo</td>
+                            <td>Donec.nibh.Quisque@metussitamet.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Lars Allison</td>
+                            <td>Zaffelare</td>
+                            <td>Finland</td>
+                            <td>Nullam@arcu.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Amos Schneider</td>
+                            <td>Beauvechain</td>
+                            <td>Comoros</td>
+                            <td>vitae.aliquet.nec@mauris.co.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Helen Burt</td>
+                            <td>Southampton</td>
+                            <td>Sudan</td>
+                            <td>sit.amet.diam@tinciduntorciquis.ca</td>
+                        </tr>
+                        <tr>
+                            <td>Yuli Bernard</td>
+                            <td>Central Jakarta</td>
+                            <td>Uruguay</td>
+                            <td>nisi.Cum@loremegetmollis.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Demetria Townsend</td>
+                            <td>Darion</td>
+                            <td>Somalia</td>
+                            <td>volutpat@Maecenas.com</td>
+                        </tr>
+                        <tr>
+                            <td>Chantale Garrison</td>
+                            <td>Palangka Raya</td>
+                            <td>Romania</td>
+                            <td>purus.ac@risusNunc.org</td>
+                        </tr>
+                        <tr>
+                            <td>Florence Gibson</td>
+                            <td>Faizabad</td>
+                            <td>Laos</td>
+                            <td>enim@maurisa.org</td>
+                        </tr>
+                        <tr>
+                            <td>Rhona Dennis</td>
+                            <td>Quemchi</td>
+                            <td>Papua New Guinea</td>
+                            <td>adipiscing.lobortis.risus@ac.net</td>
+                        </tr>
+                        <tr>
+                            <td>Geoffrey Weber</td>
+                            <td>Kearny</td>
+                            <td>Poland</td>
+                            <td>Fusce.aliquet@posuereat.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Inga Jones</td>
+                            <td>Acquedolci</td>
+                            <td>Vanuatu</td>
+                            <td>ante@ipsumdolor.ca</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <!-- JS PARA DATATABLE -->
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+
+    <!-- https://datatables.net/examples/styling/bootstrap4 -->
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- https://datatables.net/reference/option/language -->
+    <script>
+        $('#miTabla').DataTable({
+            language: {
+                "decimal": "",
+                "emptyTable": "No hay datos disponibles en la tabla",
+                "info": "Mostrando _START_ al _END_ de _TOTAL_ registros",
+                "infoEmpty": "Mostrando 0 al 0 de 0 registros",
+                "infoFiltered": "(filtrado de _MAX_ registros en total)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "Mostrando _MENU_ registros",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "Buscar:",
+                "zeroRecords": "No se encontraron coincidencias en registros",
+                "paginate": {
+                    "first": "Inicio",
+                    "last": "Final",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                },
+            }
+        });
+    </script>
+
+    <!-- {
+    "decimal":        "",
+    "emptyTable":     "No data available in table",
+    "info":           "Showing _START_ to _END_ of _TOTAL_ entries",
+    "infoEmpty":      "Showing 0 to 0 of 0 entries",
+    "infoFiltered":   "(filtered from _MAX_ total entries)",
+    "infoPostFix":    "",
+    "thousands":      ",",
+    "lengthMenu":     "Show _MENU_ entries",
+    "loadingRecords": "Loading...",
+    "processing":     "Processing...",
+    "search":         "Search:",
+    "zeroRecords":    "No matching records found",
+    "paginate": {
+        "first":      "First",
+        "last":       "Last",
+        "next":       "Next",
+        "previous":   "Previous"
+    },
+    "aria": {
+        "sortAscending":  ": activate to sort column ascending",
+        "sortDescending": ": activate to sort column descending"
+    }
+} -->
+</body>
+
+</html>
