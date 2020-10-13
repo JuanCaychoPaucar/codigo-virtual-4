@@ -1,5 +1,6 @@
 /**
- *
+ *AXIOS siempre devuelve el resultado en .data
+ en el ejemplo seria:  resultado.data
  */
 
 //get nos retorna una promesa

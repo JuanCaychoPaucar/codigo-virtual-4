@@ -18,6 +18,9 @@ fetch(url, {
 // EJEMPLO CON EL VERBO POST
 // en este ejemplo creamos un usuario
 
+// es recomendable madar el body con JSON.stringify
+// "name": "Jorgito", "job": "CEO"
+
 const urlPost = "https://reqres.in/api/users";
 fetch(urlPost, {
   method: "POST",
