@@ -27,3 +27,16 @@ export const putRaza = (objRaza) => {
     },
   });
 };
+
+export const deleteRaza = (objRaza) => {
+  let objRazaNuevo = {
+    raza_nombre: objRaza.raza_id,
+  };
+  return fetch(`${URL_BACKEND}/raza/${objRaza.raza_id}`, {
+    method: "DELETE",
+    body: JSON.stringify(objRazaNuevo),
+    headers: {
+      "Content-type": "Application/json",
+    },
+  });
+};
