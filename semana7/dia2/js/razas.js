@@ -8,7 +8,7 @@
 
 // importamos la constante URL_BACKEND del archivo variables.js
 import { URL_BACKEND } from "./variables.js";
-import { postRaza, putRaza, deleteRaza } from "./services/raza-service.js";
+import { postRaza, putRaza, deleteRazaById } from "./services/raza-service.js";
 
 const tbodyRazas = document.getElementById("tbody-razas");
 const formRaza = document.getElementById("formRaza");
@@ -50,22 +50,36 @@ formRaza.onsubmit = (e) => {
         text: "Nombre de raza no puede estar vacío!",
       });
     } else {
-      let objRaza = {
-        raza_nombre: inputNombre.value.trim(),
-      };
-      postRaza(objRaza).then((peticion) => {
-        peticion.json().then((data) => {
-          console.log(data);
-          getRazas();
-          modoCrear();
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Registro agregado correctamente",
-            showConfirmButton: false,
-            timer: 1500,
+      //CONFIRMACION DE CREACION DE RAZA
+      Swal.fire({
+        title: "¿Crear?",
+        text: "Seguro que desea crear el registro?",
+        icon: "info",
+        showCancelButton: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          let objRaza = {
+            raza_nombre: inputNombre.value.trim(),
+          };
+          postRaza(objRaza).then((peticion) => {
+            peticion.json().then((data) => {
+              console.log(data);
+
+              // si el objeto tiene id, es porque se ha creado correctamente
+              if (data.raza_id) {
+                getRazas();
+                modoCrear();
+                Swal.fire({
+                  position: "top-end",
+                  icon: "success",
+                  title: "Registro agregado correctamente",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+              }
+            });
           });
-        });
+        }
       });
     }
   } else {
@@ -131,7 +145,7 @@ const modoCrear = () => {
   inputNombre.value = "";
 };
 
-const eliminarRaza = (objRaza) => {
+const eliminarRaza = (id_raza) => {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "btn btn-success",
@@ -152,16 +166,21 @@ const eliminarRaza = (objRaza) => {
     })
     .then((result) => {
       if (result.isConfirmed) {
-        deleteRaza(objRaza).then((peticion) => {
+        deleteRazaById(id_raza).then((peticion) => {
           peticion.json().then((data) => {
             console.log(data);
-            getRazas();
 
-            swalWithBootstrapButtons.fire(
-              "Eliminado!",
-              "El registro a sido eliminado.",
-              "success"
-            );
+            // si raza_id existe es porque se ha eliminado correctamente
+            if (data.raza_id) {
+              swalWithBootstrapButtons.fire({
+                title: "Eliminado!",
+                text: "El registro a sido eliminado.",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
+            getRazas();
           });
         });
       } else if (
@@ -169,15 +188,18 @@ const eliminarRaza = (objRaza) => {
         result.dismiss === Swal.DismissReason.cancel
       ) {
         getRazas();
-        swalWithBootstrapButtons.fire(
-          "Cancelado",
-          "El registro no ha sido eliminado",
-          "error"
-        );
+        swalWithBootstrapButtons.fire({
+          title: "Cancelado",
+          text: "El registro no ha sido eliminado",
+          icon: "error",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       }
     });
 };
 
+// DIBUJAR TABLA
 const dibujarTabla = () => {
   // borramos la tabla, si ya existiera
   tbodyRazas.innerHTML = "";
@@ -199,7 +221,7 @@ const dibujarTabla = () => {
     btnEliminar.classList.add("btn", "btn-danger");
     btnEliminar.innerText = "Eliminar";
     btnEliminar.onclick = () => {
-      eliminarRaza(raza);
+      eliminarRaza(raza.raza_id);
     };
 
     tdBotones.appendChild(btnEditar);
