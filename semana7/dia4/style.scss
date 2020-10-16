@@ -1,0 +1,14 @@
+// creamos el archivo .scss
+// abrimos el live sass ubicado en la parte inferior
+// se abre la consola y se generan automaticamente 2 archivos css
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
+
+// primero colocamos las variables, pues se deben de crar primero
+@import "variables";
+@import "mixin";
+@import "main";
+@import "navbar";
+@import "hero";
+@import "about";
+@import "footer";
+

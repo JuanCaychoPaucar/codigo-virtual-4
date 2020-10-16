@@ -1,0 +1,7 @@
+footer {
+  text-align: center;
+  background-color: $color2;
+  color: $white;
+
+  @include paddingLayout(32px);
+}
