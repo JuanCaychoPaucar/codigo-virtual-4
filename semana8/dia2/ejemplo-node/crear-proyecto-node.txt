@@ -1,0 +1,90 @@
+La carpeta principal debe de ser un proyecto de NODE.
+
+Para crear un proyecto de NODE debemos de realizar los siguientes pasos:
+
+1. Crear la carpeta contenedora del proyecto.
+2. Dar clic derecho en dicha carpeta y seleccionar: "Open in integrated terminal"
+3. Colocar el comando: npm init -y
+   Con el parametro -y, creamos un proyecto de NODE con todos los parametros por defecto.
+4. Se crea automaticamente un archivo package.json, el cual tiene toda la configuracion de mi proyecto.
+   Nunca debemos de borrar dicho archivo.
+5. Con esto, nuestro proyecto de NODE ya esta creado.
+
+NOTA:
+        Si vamos a utilizar la importacion de algun paquete descargado a nuestro proyecto, por ejemplo:
+        import axios from "axios";
+
+        Debemos de colocar el siguiente parametro en nuestro archivo package.json
+        {
+        "name": "ejemplo-node",
+        "version": "1.0.0",
+        "description": "",
+        "main": "index.js",
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        "type": "module",   <------- ESTE PARAMETRO DEBEMOS DE AGREGARLO
+        "keywords": [],
+        "author": "",
+        "license": "ISC",
+        "dependencies": {
+            "axios": "^0.20.0",
+            "moment": "^2.29.1"
+        }
+        }
+
+
+Para realizar una instalacion de paquetes en forma LOCAL, colocamos el comando:
+npm install "nombre_paquete"
+
+Para realizar una instalacion de paquetes en forma GLOBAL, colocamos el comando:
+npm install -g "nombre_paquete"
+
+
+NO SE RECOMIENDA SUBIR EL CONTENIDO DE LA CARPETA node_modules
+para ello creamos el archivo .gitignore
+en dicho archivo colocamos las rutas de los archivos que no deseamos subir a github.
+Ejemplo:
+            node_modules/
+            nosubir.js
+
+
+PARA EJECUTAR UN ARCHIVO JS EN LA CONSOLA.
+Ejecutar el comando : node "nombre-archivo.js"
+
+
+PARA VISUALIZAR LOS CAMBIOS AUTOMATICAMENTE EN UN ARCHIVO (TIPO LIVE SERVER)
+1. Ejecutamos el comando
+    npm install -g nodemon
+
+2. Luego ejecutamos el comando
+    nodemon "nombre-archivo.js"
+
+3. Si nos muestra el siguiente error:
+nodemon is not recognizedas an internal or external command.
+
+4. Ejecutar el siguiente comando:
+npm config get prefix
+
+5. Nos muestra una ruta, la cual debemos de colocarla en las variables de entorno de Windows.
+   Ejemplo: C:\Users\Godicillo\AppData\Roaming\npm
+
+6. Lo agregamos en VARIABLES DEL SISTEMA, clic en PATH y luego en EDITAR.
+
+7. Clic en NUEVO y pegamos la ruta. Luego guardamos todo.
+
+8. Si no funciona el comando nodemon, entonces reiniciamos el computador y volvemos a ejecutarlo.
+
+https://steakrecords.com/es/581988-39nodemon39-is-not-recognized-as-an-internal-command-error-in-windows-cmd-nodejs.html
+
+
+
+PARA INSTALAR LAS DEPENDENCIAS DE UN PROYECTO EXTERNO
+Ejecutamos el comando:
+npm install
+
+Lo cual bajara de manera automatica todas las dependencias del proyecto, las cuales estan dentro del archivo package.json
+
+
+PARA DETENER UN PROCESO EN ESCUCHA ACTIVA (como nodemon por ejemplo)
+CTRL + C

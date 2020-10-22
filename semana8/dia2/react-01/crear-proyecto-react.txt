@@ -1,0 +1,30 @@
+para crear un nuevo proyecto en REACT, debemos de realizar lo siguiente:
+
+1. Ejecutar el siguiente comando: npx create-react-app nombre_aplicacion
+   ejemplo:
+   npx create-react-app react-01
+
+2. Esto nos creara de forma automatica todoslos archivos necesarios.
+
+
+NOTA:
+Para que la creacion del nuevo proyecto de REACT sea mas rapido, es recomendable instalar la libreria YARN.
+npm install -g yarn
+
+una vez instalado yarn, ya podemoes ejecutar la creacion del proyecto de REACT
+
+el comando es el  mismo: npx create-react-app nombre_aplicacion
+
+npx create-react-app react-01
+
+
+
+INICIALIZAR EL PROYECTO LUEGO DE CREARLO
+Nos ubicamos en la carpeta principal del proyecto, es decir, la que tiene el nombre_aplicacion
+Colocamos el siguiente comando:
+npm start
+
+Se abrira una pantalla en el navegador con el logo de react
+
+para finalizar el proceso de escucha, presionamos:
+CTRL + C
