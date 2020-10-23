@@ -11,6 +11,8 @@ const Contador = () => {
 
   const [c, actualizarC] = useState(0);
 
+  console.log("Ejecutando el componente Contador");
+
   const restar = () => {
     actualizarC(c - 1);
   };
