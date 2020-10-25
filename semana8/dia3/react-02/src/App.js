@@ -12,6 +12,14 @@ const App = () => {
 
     let copiaCanasta = [...canasta];
 
+    /**
+      * let productoExistente = canasta.find((p) => {
+            if (p.id === id) {
+              return p;
+            }
+        });
+    */
+    // retornamos el objeto cuyo id sea igual al id recibido por parametro en la funcion. Tenemos un return implicito
     let productoExistente = canasta.find((p) => p.id === id);
     if (productoExistente) {
       copiaCanasta = copiaCanasta.map((p) => {
