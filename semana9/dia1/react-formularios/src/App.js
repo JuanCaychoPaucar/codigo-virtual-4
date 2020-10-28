@@ -1,16 +1,16 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import MascotasForm from "./mascotas/MascotasForm";
+import Mascotas from "./mascotas/Mascotas";
 // import Formulario from "./components/Formulario";
 // import FormularioValidacion from "./components/FormularioValidacion";
 
 const App = () => {
   return (
     <>
-      <main className="container">
+      <main className="container mt-4">
         {/* <Formulario /> */}
         {/* <FormularioValidacion /> */}
-        <MascotasForm />
+        <Mascotas />
       </main>
     </>
   );
