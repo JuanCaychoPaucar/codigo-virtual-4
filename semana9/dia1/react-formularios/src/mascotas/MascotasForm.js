@@ -12,7 +12,7 @@ const formularioVacio = {
   mascota_activo: false,
 };
 
-const MascotasForm = ({ traerMascotas, mascotaEditar }) => {
+const MascotasForm = ({ traerMascotas, mascotaEditar, setMascotas }) => {
   const [formulario, setFormulario] = useState(formularioVacio);
   const [modo, setModo] = useState("crear");
 
@@ -30,7 +30,28 @@ const MascotasForm = ({ traerMascotas, mascotaEditar }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    console.log("formulariooo");
+    console.log(formulario);
+
+    // verificar campo vacio
+    if (
+      (formulario.mascota_nombre.trim() === "") |
+      (formulario.mascota_colores.trim() === "") |
+      (formulario.mascota_raza == "0") |
+      (formulario.mascota_tipo == "0")
+    ) {
+      Swal.fire({
+        title: "Que pasa mi chamo!!!",
+        text: "Los campos no deben estar vacíos",
+        icon: "warning",
+      });
+      return;
+    }
+
+    // si todo esta correcto
     if (modo === "crear") {
+      // console.log(formulario.mascota_raza);
       Swal.fire({
         title: "¿Registrar mascota?",
         text: "Se guardará en la base de datos",
@@ -47,6 +68,7 @@ const MascotasForm = ({ traerMascotas, mascotaEditar }) => {
                 title: "Registrado!",
                 text: "mascota registrada correctamente",
                 icon: "success",
+                showConfirmButton: false,
                 timer: 1500,
               });
             }
@@ -64,6 +86,7 @@ const MascotasForm = ({ traerMascotas, mascotaEditar }) => {
         if (isConfirmed) {
           putMascota({ ...formulario }).then((rpta) => {
             if (rpta.status === 200) {
+              setMascotas([]);
               setFormulario(formularioVacio);
               setModo("crear");
               traerMascotas();
@@ -146,9 +169,16 @@ const MascotasForm = ({ traerMascotas, mascotaEditar }) => {
 
               {/* EDAD */}
               <div className="form-group col-md-6">
-                <label htmlFor="">Edad</label>
+                <label htmlFor="">
+                  Edad{" "}
+                  <span className="text-danger">
+                    (dejar en 0 si aún no cumple el año)
+                  </span>
+                </label>
                 <input
                   type="number"
+                  min="0"
+                  pattern="^[0-9]+"
                   className="form-control"
                   name="mascota_edad"
                   value={formulario.mascota_edad}
@@ -202,7 +232,14 @@ const MascotasForm = ({ traerMascotas, mascotaEditar }) => {
               </div>
 
               <div className="form-group col-md-6">
-                <button className="btn btn-block btn-danger" type="button">
+                <button
+                  className="btn btn-block btn-danger"
+                  type="button"
+                  onClick={() => {
+                    setFormulario(formularioVacio);
+                    setModo("crear");
+                  }}
+                >
                   Cancelar
                 </button>
               </div>

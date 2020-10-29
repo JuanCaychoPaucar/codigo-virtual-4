@@ -15,6 +15,7 @@ const MascotasTabla = ({ mascotas, traerMascotas, setMascotaEditar }) => {
     }).then(({ isConfirmed }) => {
       if (isConfirmed) {
         deleteMascotaById(id).then((data) => {
+          console.log(data);
           // si la data tiene un atributo mascota_id, quiere decir que si se ha eliminado
           if (data.mascota_id) {
             console.log(mascotas);
@@ -23,6 +24,7 @@ const MascotasTabla = ({ mascotas, traerMascotas, setMascotaEditar }) => {
               title: "Eliminado!!",
               icon: "success",
               text: "Registro eliminado satisfactoriamente",
+              showConfirmButton: false,
               timer: 1500,
             });
           }
@@ -129,6 +131,7 @@ const MascotasTabla = ({ mascotas, traerMascotas, setMascotaEditar }) => {
       <div className="col-12">
         <div className="card shadow">
           <div className="card-body">
+            <h2 className="text-center">Mascotas</h2>
             <MDBDataTable
               className="text-center"
               responsive
