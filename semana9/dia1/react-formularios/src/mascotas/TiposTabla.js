@@ -20,6 +20,7 @@ const TiposTabla = ({ tipos, traerTipos, setTipoEditar }) => {
               title: "Eliminado!!",
               icon: "success",
               text: "Registro eliminado satisfactoriamente",
+              showConfirmButton: false,
               timer: 1500,
             });
           }

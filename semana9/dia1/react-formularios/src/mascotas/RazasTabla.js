@@ -20,6 +20,7 @@ const RazasTabla = ({ razas, traerRazas, setRazaEditar }) => {
               title: "Eliminado!!",
               icon: "success",
               text: "Registro eliminado satisfactoriamente",
+              showConfirmButton: false,
               timer: 1500,
             });
           }
