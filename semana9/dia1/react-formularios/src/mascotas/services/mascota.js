@@ -44,3 +44,17 @@ export const deleteMascotaById = async (id) => {
   const json = await peticion.json();
   return json;
 };
+
+export const putMascota = async (objMascota) => {
+  // console.log(objMascota);
+  const respuesta = await axios.put(
+    `${URL_BACKEND}/mascota/${objMascota.mascota_id}`,
+    JSON.stringify(objMascota),
+    {
+      headers: {
+        "Content-type": "Application/json",
+      },
+    }
+  );
+  return respuesta;
+};

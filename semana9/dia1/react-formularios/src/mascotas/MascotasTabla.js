@@ -1,9 +1,11 @@
 import React from "react";
+import Toggle from "react-toggle";
+import "react-toggle/style.css";
 import { MDBDataTable } from "mdbreact";
-import { deleteMascotaById } from "./services/mascota";
+import { deleteMascotaById, putMascota } from "./services/mascota";
 import Swal from "sweetalert2";
 
-const MascotasTabla = ({ mascotas, traerMascotas }) => {
+const MascotasTabla = ({ mascotas, traerMascotas, setMascotaEditar }) => {
   const eliminarmascotaporId = (id) => {
     Swal.fire({
       title: "¿Eliminar?",
@@ -15,6 +17,7 @@ const MascotasTabla = ({ mascotas, traerMascotas }) => {
         deleteMascotaById(id).then((data) => {
           // si la data tiene un atributo mascota_id, quiere decir que si se ha eliminado
           if (data.mascota_id) {
+            console.log(mascotas);
             traerMascotas();
             Swal.fire({
               title: "Eliminado!!",
@@ -23,6 +26,21 @@ const MascotasTabla = ({ mascotas, traerMascotas }) => {
               timer: 1500,
             });
           }
+        });
+      }
+    });
+  };
+
+  const handleChangeToggle = (estado, objMascota) => {
+    putMascota({ ...objMascota, mascota_activo: estado }).then((rpta) => {
+      // console.log(rpta);
+      if (rpta.status === 200) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Registro actualizado",
+          showConfirmButton: false,
+          timer: 1000,
         });
       }
     });
@@ -73,9 +91,25 @@ const MascotasTabla = ({ mascotas, traerMascotas }) => {
     rows: mascotas.map((m) => {
       return {
         ...m,
+        mascota_activo: (
+          <Toggle
+            defaultChecked={m.mascota_activo}
+            // checked={m.mascota_activo}
+            onChange={(e) => {
+              handleChangeToggle(e.target.checked, { ...m });
+            }}
+          />
+        ),
         acciones: (
           <>
-            <button className="btn btn-secondary mr-2">Editar</button>
+            <button
+              className="btn btn-secondary mr-2"
+              onClick={() => {
+                setMascotaEditar({ ...m });
+              }}
+            >
+              Editar
+            </button>
             <button
               className="btn btn-danger"
               onClick={() => {
