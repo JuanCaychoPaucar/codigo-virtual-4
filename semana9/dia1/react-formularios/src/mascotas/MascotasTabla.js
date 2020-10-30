@@ -5,7 +5,12 @@ import { MDBDataTable } from "mdbreact";
 import { deleteMascotaById, putMascota } from "./services/mascota";
 import Swal from "sweetalert2";
 
-const MascotasTabla = ({ mascotas, traerMascotas, setMascotaEditar }) => {
+const MascotasTabla = ({
+  mascotas,
+  traerMascotas,
+  setMascotaEditar,
+  setMascotas,
+}) => {
   const eliminarmascotaporId = (id) => {
     Swal.fire({
       title: "¿Eliminar?",
@@ -19,6 +24,7 @@ const MascotasTabla = ({ mascotas, traerMascotas, setMascotaEditar }) => {
           // si la data tiene un atributo mascota_id, quiere decir que si se ha eliminado
           if (data.mascota_id) {
             console.log(mascotas);
+            setMascotas([]); //limpiamos antes de volver a traer las mascotas
             traerMascotas();
             Swal.fire({
               title: "Eliminado!!",
@@ -37,6 +43,16 @@ const MascotasTabla = ({ mascotas, traerMascotas, setMascotaEditar }) => {
     putMascota({ ...objMascota, mascota_activo: estado }).then((rpta) => {
       // console.log(rpta);
       if (rpta.status === 200) {
+        // actualizar el estado mascotas del componente mascotas.js con la mascota que acaba de modificar su valor(campo:mascota_activo)
+        let nuevasMascotas = mascotas.map((m) => {
+          if (m.mascota_id === objMascota.mascota_id) {
+            m.mascota_activo = estado;
+          }
+          return m;
+        });
+
+        setMascotas(nuevasMascotas);
+
         Swal.fire({
           position: "top-end",
           icon: "success",

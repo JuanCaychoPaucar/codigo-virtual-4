@@ -28,6 +28,7 @@ const Mascotas = () => {
         mascotas={mascotas}
         traerMascotas={traerMascotas}
         setMascotaEditar={setMascotaEditar}
+        setMascotas={setMascotas}
       />
     </>
   );
