@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import NotFound from "./screens/404/NotFound";
+import Citas from "./screens/citas/Citas";
 import Home from "./screens/home/Home";
 import Mascotas from "./screens/mascotas/Mascotas";
 import MascotaVer from "./screens/mascotas/MascotaVer";
@@ -30,10 +31,12 @@ const App = () => {
           /mascotas   es mas general que     /mascotas/crear
 
         */}
+        {/* <Route path={"/mascotas/crear"} component={nombre_componente} /> */}
         <Route path={"/mascotas/:mascota_id"} component={MascotaVer} />
         <Route path={"/mascotas"} component={Mascotas} />
         <Route path={"/razas"} component={Razas} />
         <Route path={"/tipos"} component={Tipos} />
+        <Route path={"/citas"} component={Citas} />
 
         {/* la siguiente ruta (/) indica que el componente Home respondera solo cuando la direccion este con el valor localhost:3000   */}
         <Route exact path={"/"} component={Home} />

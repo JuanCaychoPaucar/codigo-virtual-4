@@ -1,11 +1,13 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
+import logo from "./../assets/logomascotas.png"; // para agregar un recurso, como una imagen
 
 const Header = () => {
     // colocar etiqueta cierre al input, poner className. A los href="#" colocarles el "!" delante
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-            <a className="navbar-brand" href="!#">Navbar</a>
+            <img src={logo} alt="" height="50"/>
+            <a className="navbar-brand ml-4" href="!#">MascotApp</a>
             <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                 aria-expanded="false" aria-label="Toggle navigation"></button>
             <div className="collapse navbar-collapse" id="collapsibleNavId">
@@ -25,6 +27,9 @@ const Header = () => {
                     </li>
                     <li className="nav-item">
                         <NavLink to={"/razas"} className="nav-link" activeClassName="active">Razas</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink to={"/citas"} className="nav-link" activeClassName="active">Citas</NavLink>
                     </li>
 
                 </ul>

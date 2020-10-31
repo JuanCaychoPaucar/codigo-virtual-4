@@ -1,7 +1,7 @@
 import React from "react";
 
 const NotFound = (props) => {
-  // Todo componente renderizado por una ruta (>Route><Route/>) recibe por defecto parametros de navegacion en las props.
+  // Todo componente renderizado por una ruta (<Route><Route/>) recibe por defecto parametros de navegacion en las props.
   const goHome = () => {
     // console.log(props);
     // history.push("[ruta del destino]"), redirecciona a la pagina que responda a la ruta mencionada.
