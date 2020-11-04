@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link, NavLink } from "react-router-dom";
 
+/**
+ * NavLink, nos permite colocar la propiedad activeClassName="active",para cuando queramos visualizar que enlace esta activo.
+ */
+
 const AdminHeader = () => {
     return (
         <nav className="navbar navbar-expand-sm navbar-light bg-light">

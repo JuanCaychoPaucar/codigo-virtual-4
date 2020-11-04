@@ -1,4 +1,6 @@
-// Crear un contexto. Siempre es asi.
+/**
+ * PASO1: Crear un contexto. Siempre es asi.
+ */
 
 import { createContext } from "react";
 

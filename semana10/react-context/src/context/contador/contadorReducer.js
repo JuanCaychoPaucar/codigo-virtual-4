@@ -9,7 +9,7 @@
  * El reducer es quien toma la descion de modificar o no una variable de estado.
  * 
  * IMPORTANTE:
- * Cualquier cosa que retorne el reducer, ser ale nuevo state de la aplicacion.
+ * Cualquier cosa que retorne el reducer, sera el nuevo state de la aplicacion.
  */
 const ContadorReducer = (estadoActual, action) => {
     if (action.type === "SUMAR") {

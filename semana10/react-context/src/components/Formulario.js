@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import ContadorContext from '../context/contador/contadorContext';
+import ContadorContext from '../context/contador/ContadorContext';
 import Boton from './Boton';
 
 const Formulario = () => {
@@ -20,4 +20,4 @@ const Formulario = () => {
     )
 }
 
-export default Formulario
+export default Formulario;
