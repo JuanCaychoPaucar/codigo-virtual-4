@@ -1,10 +1,19 @@
-import React from 'react'
-import PosComandaItem from './PosComandaItem'
+import React, { useContext } from 'react';
+import MesaContext from '../context/mesa/MesaContext';
+import PosComandaItem from './PosComandaItem';
+import Swal from "sweetalert2";
 
 const PosComanda = () => {
 
+    const { globalPedidos, globalObjMesa, globalPagar } = useContext(MesaContext);
 
-    
+    let pedidoActual;
+
+
+    if (globalObjMesa) {
+        pedidoActual = globalPedidos.find(pedido => pedido.mesa_id === globalObjMesa.mesa_id);
+    }
+
 
     return (
         <div className="comanda">
@@ -14,11 +23,43 @@ const PosComanda = () => {
 
             <ul className="comanda__lista">
 
-                <PosComandaItem />
+                {
+                    globalObjMesa ?
+                        pedidoActual ?
+                            pedidoActual.platos.map(plato => {
+                                return <PosComandaItem key={plato.plato_id} plato={plato} />
+                            })
+                            :
+                            <span>Esta mesa no tiene pedidos</span>
+                        :
+                        <span>No se ha seleccionado ninguna mesa</span>
+                }
 
             </ul>
-            
-            <button className="boton boton-success boton-block">PAGAR</button>
+
+            <button
+                className="boton boton-success boton-block"
+                onClick={() => {
+                    if(!globalObjMesa) return;
+                    
+                    Swal.fire({
+                        title: "Confirmar pago",
+                        text: "Los cambios se haran efecto en la base de datos",
+                        icon: "question",
+                        showCancelButton: true,
+                    }).then(({ isConfirmed }) => {
+                        if (isConfirmed) {
+                            globalPagar();
+                        }
+
+                        // si isConfirmed es true, entonces ejecutar globalPagar()
+                        // isConfirmed && globalPagar();
+                    });
+
+                }}
+            >
+                PAGAR
+            </button>
         </div>
     )
 }

@@ -24,5 +24,7 @@ const MesaReducer = (stateActual, action) => {
 export default MesaReducer;
 
 /**
+ * stateActual, es el estado actual de la variable de estado que se quiere modificar, que viene del MesaState.
+ * action, es lo que se recibe del dispatch que se encuentra en MesaState.
  * TODO lo que retorna MesaReducer es el nuevo valor o valor de reemplazo de mi variable de estado.
  */
