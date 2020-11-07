@@ -9,7 +9,8 @@ const PosComanda = () => {
 
     let pedidoActual;
 
-
+    // no usamos filter, pues nos devolvera un arreglo vacio en caso no haya coincidencia
+    // en cambio, find, me retorna undefined si no encuentra coincidencia
     if (globalObjMesa) {
         pedidoActual = globalPedidos.find(pedido => pedido.mesa_id === globalObjMesa.mesa_id);
     }
@@ -40,8 +41,8 @@ const PosComanda = () => {
             <button
                 className="boton boton-success boton-block"
                 onClick={() => {
-                    if(!globalObjMesa) return;
-                    
+                    if (!globalObjMesa) return;
+
                     Swal.fire({
                         title: "Confirmar pago",
                         text: "Los cambios se haran efecto en la base de datos",
