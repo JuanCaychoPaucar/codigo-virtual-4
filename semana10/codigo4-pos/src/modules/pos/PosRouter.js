@@ -1,7 +1,8 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import PosControlScreen from './screens/control/PosControlScreen';
 import MesaState from './context/mesa/MesaState';
+import RutaPrivada from '../../RutaPrivada';
 
 import "./../../sass/pos.scss";
 
@@ -9,7 +10,7 @@ const PosRouter = () => {
     return (
         <MesaState>
             <Switch>
-                <Route path={"/pos/control"} component={PosControlScreen} />
+                <RutaPrivada path={"/pos/control"} componente={PosControlScreen} />
             </Switch>
         </MesaState>
     )
